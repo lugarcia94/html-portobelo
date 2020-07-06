@@ -12,7 +12,8 @@ body
 .container
     max-width 1300px
     margin: 0 auto
-    width calc(100% - 30px)
+    width 100%
+    padding: 0 15px
 
     &__mod
         margin-left: auto
@@ -91,7 +92,8 @@ body
     &__container
         max-width 1300px
         margin: 0 auto
-        width calc(100% - 30px)
+        width 100%
+        padding: 0 15px
         display: flex
         align-items: center
         justify-content: flex-start
@@ -545,7 +547,9 @@ body
 @media(max-width : 992px)
     .header
         &__container
-            box-shadow:  320px 0 0 #ffffff, -100px 0 0 #104580
+            box-shadow: 320px 0 0 #ffffff, -100px 0 0 #104580
+            padding: 0
+            width calc(100% - 30px)
 
         &__mobile
             display: flex
