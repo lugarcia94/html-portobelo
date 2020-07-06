@@ -24,6 +24,7 @@ body
         display: flex
         align-items: center
         justify-content: flex-start
+        padding: 0
         box-shadow: 700px 0 0 #a0a2a8, -700px 0 0 #104580
 
     &__mobile
@@ -32,6 +33,12 @@ body
 .logo
     background-color: #104580;
     padding: 18px 0
+
+    @media(min-width: 992px)
+        padding: 0
+        height: 70px
+        display: flex
+        align-items: center
 
     &__link 
         display: block
@@ -432,6 +439,7 @@ body
         font-size: 18px;
         color: #707480;
         font-weight: 400;
+        text-align: justify
 
     a
         display: flex
@@ -484,7 +492,7 @@ body
     &__action
         display: flex
         align-items: stretch
-        justify-content: center
+        justify-content: flex-start
 
 .social
     padding: 30px 0
@@ -646,6 +654,8 @@ body
         bottom 0
         background: #fff
         padding: 30px 15px
+        box-shadow: 3px 2px 17px #00000052
+        transition: all 200ms ease-in-out
 
         &__open
 
@@ -677,6 +687,10 @@ body
             height: 48px;
             background: #fff
             border: none
+            box-shadow: -13px 2px 17px #00000052
+            color: #0f4580
+            font-size: 20px
+            font-weight: 700
 
     .sobre-loja
         &__action
