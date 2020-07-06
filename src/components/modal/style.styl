@@ -1,10 +1,21 @@
 body
     font-family: 'Roboto', sans-serif;
 
+::-webkit-scrollbar 
+    width 0px
+    background: transparent!important
+
+::-webkit-scrollbar-track 
+  background: transparent
+
+
 .container
     max-width 1300px
     margin: 0 auto
     width calc(100% - 30px)
+
+    &__mod
+        margin-left: auto
 
 .header
     
@@ -37,11 +48,15 @@ body
 
     &__item
         padding: 0 30px
+
     &__link
         font-size: 15px;
         line-height: 24px;
         color: #1d2029;
         font-weight: 500;
+
+    &-btn__close
+        display: none 
 
 .search
     border-left: 1px solid #ececec
@@ -95,6 +110,10 @@ body
         align-items: stretch
         justify-content: space-between
 
+    a
+        &:hover
+            img
+                opacity: 0.6
 
 .info
     padding: 90px 0
@@ -131,11 +150,16 @@ body
         font-weight: 600;
         text-align: center
         background: #fff
-        min-width 220px
+        max-width 220px
         height: 50px;
         border-radius: 2px;
         background-color: #ffffff;
         border: 1px solid #d9d9d9;
+        
+        &:hover
+            background: #002043
+            text-decoration: none
+            color: #fff
 
 .biblioteca
     position relative
@@ -147,7 +171,6 @@ body
         .container
             flex: 1
 
-    
     span 
         display: block
         margin-bottom 50px
@@ -155,7 +178,10 @@ body
         color: #ffffff;
         font-weight: 400;
         
-    button
+        @media(min-width: 993px)
+            padding-right 65px
+
+    a
         display: flex
         align-items: center
         justify-content: center
@@ -174,8 +200,14 @@ body
         font-weight: 500;
         text-align: center;
 
+        &:hover
+            text-decoration: none
+            background: #002043
+            text-decoration: none
+            color: #fff
+
     &__content
-        max-width 670px
+        max-width 630px
         padding: 80px 0
         margin-left: auto
 
@@ -202,8 +234,12 @@ body
         color: #1d2029;
         font-weight: 400;
 
-    button
-        width: 322px;
+    a
+        display: flex
+        align-items: center
+        justify-content: center
+        max-width: 322px;
+        width 100%
         height: 50px;
         border-radius: 2px;
         background-color: #009649;
@@ -213,9 +249,15 @@ body
         line-height: 24px;
         color: #ffffff;
         font-weight: 500;
+
+        &:hover
+            text-decoration: none
+            opacity 0.6
     
 .galeria
     padding: 50px 0
+    display: flex
+    align-items: center
 
     strong 
         display: block
@@ -233,6 +275,21 @@ body
 
     &__content
         max-width 270px
+
+     &__ul
+        display: flex
+        align-items: stretch
+        overflow: auto;
+        flex-wrap: nowrap;
+        width: 100%;
+    
+    &__item
+        margin-right: 30px
+    
+        a
+            &:hover
+                opacity 0.6
+    
 
 .recomenda
     display: flex
@@ -254,12 +311,15 @@ body
                 color: #104580;
                 font-weight: 500;
 
-            span
+            a
                 display: block
                 font-size: 14px;
                 line-height: 24px;
                 color: #707480;
                 font-weight: 400;
+
+                &:hover
+                    color: #104580
 
             .recomenda
                 &__subtitle
@@ -272,11 +332,14 @@ body
                     display: flex
                     align-items: stretch
 
-                &__item
-                    flex: 0 0 50%
-
+                @media(min-width 993px)
+                    &__item
+                        flex: 0 0 50%
+                        
                 &__btn
-                    display: block
+                    display: flex
+                    align-items: center
+                    justify-content: center
                     margin-top 30px
                     width 100%
                     height: 50px;
@@ -288,6 +351,11 @@ body
                     line-height: 24px;
                     color: #ffffff;
                     font-weight: 500;
+
+                    &:hover
+                        text-decoration: none 
+                        background: #fff
+                        color #104580
                     
 
     &__title 
@@ -353,9 +421,10 @@ body
         color: #707480;
         font-weight: 400;
 
-    button
-        display: inline-block
+    a
+        display: flex
         align-items: center
+        justify-content: center
 
         height: 50px;
 
@@ -366,8 +435,10 @@ body
         font-weight: 500;
 
         border-radius: 2px;
-  
         border: 1px solid #d9d9d9;
+        
+        &:hover
+            text-decoration: none
 
     &__btnloja
         max-width: 239px;
@@ -375,18 +446,34 @@ body
         background: #104580
         color: #ffffff;
 
+        &:hover
+            background-color: #fff;
+            color: #1d2029;
+
     &__btn
+        margin-right: 20px
         max-width: 321px;
         width 100%
         background-color: #fff;
         color: #1d2029;
+        
+        &:hover
+            background: #104580
+            color: #ffffff;
 
     &__block
         flex: 0 0 50%
         padding: 0 15px
 
+    &__action
+        display: flex
+        align-items: stretch
+        justify-content: center
+
 .social
     padding: 30px 0
+    display flex
+    align-items: center 
 
     span
         display: block
@@ -398,6 +485,48 @@ body
     &__block
         max-width 480px
 
+    &__ul
+        display: flex
+        align-items: center
+        margin: 25px 0 0
+
+    &__item
+        flex: 0 0 48px
+        a
+            display: flex
+            align-items: center
+
+            &:hover
+               svg
+                    fill: #104580
+    
+        svg
+            width  20px
+            height 20px
+
+    &__list
+        display flex   
+        align-items: center
+        overflow: auto;
+        flex-wrap: nowrap;
+        width: 100%;
+    
+    &__itens
+        margin-right: 30px
+        flex: 0 0 220px
+        
+        a
+            display: flex
+            align-items: center
+
+            &:hover
+                opacity 0.6
+    
+
+.footer
+    border: 1px solid #d9d9d9;
+    border-width 1px 0
+    margin-bottom 40px
 
 @media(max-width : 992px)
     .header
@@ -460,6 +589,16 @@ body
                 padding: 0
                 margin-bottom 25px
 
+        &__ul
+            overflow: auto;
+            flex-wrap: nowrap;
+            width: 100%;
+        
+        &__item
+            margin-right: 30px
+            flex: 0 0 270px
+           
+
     .sobre-loja
         .container__sobre-loja
             flex-wrap: wrap
@@ -504,15 +643,66 @@ body
             opacity 0
             visibility hidden
 
+        &__btn
+            flex: 1
+            text-align: center
     .menu
         &__ul
             display: block
         
         &-btn__close
             position: absolute
+            display: block
             left: -48px;
             top 0
             width: 48px;
             height: 48px;
             background: #fff
             border: none
+
+    .sobre-loja
+        &__action
+            flex-wrap: wrap
+
+        &__btn
+            flex: 0 0 100%
+            margin: 0 auto
+
+        &__btnloja
+            flex: 0 0 100%
+            max-width 320px
+            margin: 15px 
+
+        &__block
+            padding: 0px
+
+            &-img
+                margin-bottom 30px
+    
+    .galeria
+        flex-wrap: wrap
+        padding-left: 15px
+        
+        &__content
+            max-width 100%
+
+        &__ul
+            margin: 30px 0
+
+        &__item
+            flex: 0 0 300px
+
+    .social
+        text-align: center
+
+        span
+            font-size: 15px;
+            color: #707480;
+            font-weight: 300;
+            margin-bottom 4px
+
+        &__ul
+            justify-content: center
+
+        &__list
+            display: none
