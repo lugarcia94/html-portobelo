@@ -120,6 +120,16 @@ body
     display flex
     align-items: center
 
+    &__logo,     &__span 
+        font-size: 60px
+        line-height: 50px
+        font-weight: 400
+        color: #00114c
+
+    &__span 
+        color: #434854
+        font-weight: 300
+
     &__content
         margin-left: 60px
 
@@ -462,8 +472,12 @@ body
             color: #ffffff;
 
     &__block
-        flex: 0 0 50%
+        flex: 1 1 auto
         padding: 0 15px
+
+        &-img
+            flex: 0 0 auto
+            text-align: right 
 
     &__action
         display: flex

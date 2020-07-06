@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Base</title>
+    <title>Portobello</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header"> 
@@ -67,7 +68,10 @@
         </div>
         <div class="container">
             <div class="info">
-                <img src="../img/logo_completa.png">
+                <div>
+                    <span class="info__logo">Portobello</span>
+                    <span class="info__span">+arquitetura</span>
+                </div>
 
                 <div class="info__content">
                     <strong class="info__title">O programa de relacionamento da Portobello Shop com os profissionais de arquitetura e design</strong>
@@ -94,7 +98,8 @@
         </div>
         <div class="container">
             <div class="banners">
-                <ul class="banners__ul">
+                <ul class="banners__ul"data-aos="fade-up"
+                data-aos-anchor-placement="center-center">
                     <li class="banners__item">
                         <a href="#">
                             <img src="./img/Catálogos.png" alt="" srcset="">
@@ -129,22 +134,22 @@
                     <span>Produtos, projetos e eventos da Portobello reunidos em um só lugar dentro do Archtrends.</span>
                 </div>
                 <ul class="galeria__ul">
-                    <li class="galeria__item">
+                    <li class="galeria__item" data-aos="zoom-in-up">
                         <a href="#">
                             <img src="./img/0.png" alt="">
                         </a>
                     </li>
-                    <li class="galeria__item">
+                    <li class="galeria__item" data-aos="zoom-in-up">
                         <a href="#">
                             <img src="./img/0.png" alt="">
                         </a>
                     </li>
-                    <li class="galeria__item">
+                    <li class="galeria__item" data-aos="zoom-in-up">
                         <a href="#">
                             <img src="./img/0.png" alt="">
                         </a>
                     </li>
-                    <li class="galeria__item">
+                    <li class="galeria__item" data-aos="zoom-in-up">
                         <a href="#">
                             <img src="./img/0.png" alt="">
                         </a>
@@ -189,7 +194,7 @@
         </div>
         <div class="sobre-loja">
             <div class="container container__sobre-loja">
-                <div class="sobre-loja__block sobre-loja__block-text">  
+                <div class="sobre-loja__block sobre-loja__block-text" data-aos="zoom-in-left">  
                     <strong>Portobello Shop</strong>
                     <span>
                         Com 140 lojas por todo o Brasil, a Portobello Shop assume o importante papel de conectar diretamente a marca com os profissionais de arquitetura e design, o que permite uma troca valiosa de informações, a partir do mercado, para alimentar seu sistema produtivo.
@@ -203,7 +208,7 @@
                         <a class="sobre-loja__btnloja">ENCONTRE UMA LOJA</a>
                     </div>
                 </div>
-                <div class="sobre-loja__block sobre-loja__block-img">  
+                <div class="sobre-loja__block sobre-loja__block-img" data-aos="zoom-in-left">  
                     <img src="./img/sobre.png" alt="">
                 </div>
             </div>
@@ -252,22 +257,26 @@
                  </ul>
             </div>
             <ul class="social__list">
-                <li class="social__itens">
+                <li class="social__itens"data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
                     <a href="#">
                         <img src="./img/insta.png" alt="" srcset="">
                     </a>
                 </li>
-                <li class="social__itens">
+                <li class="social__itens"data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
                     <a href="#">
                         <img src="./img/insta2.png" alt="" srcset="">
                     </a>
                 </li>
-                <li class="social__itens">
+                <li class="social__itens"data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
                     <a href="#">
                         <img src="./img/insta3.png" alt="" srcset="">
                     </a>
                 </li>
-                <li class="social__itens">
+                <li class="social__itens"data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
                     <a href="#">
                         <img src="./img/insta4.png" alt="" srcset="">
                     </a>
@@ -277,6 +286,9 @@
          </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 </body>
 </html>
