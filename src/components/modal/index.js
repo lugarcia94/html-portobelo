@@ -11,3 +11,5 @@ jQuery('.menu__btn').on('click', function () {
 jQuery('.menu-btn__close').on('click', function () {
     jQuery(this).parent().parent().removeClass('navigation__open');
 });
+
+

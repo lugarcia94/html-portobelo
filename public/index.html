@@ -10,6 +10,83 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+
+    <script src="https://www.portobello.com.br/apis/php.js"></script>
+    <script src="https://www.portobello.com.br/apis/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://www.portobello.com.br/apis/bower_components/gi-jsonrpc/jsonRpc.js"></script>
+    <script src="https://www.portobello.com.br/apis/bower_components/moment/min/moment.min.js"></script>
+    <script src="https://www.portobello.com.br/apis/enturma/util.js"></script>
+
+    <script>
+
+        var uid = null;
+        var uuid = null;
+        var ulogin = null;
+        var ucode = null;
+        var idUserGroup = null;
+        var oid = "14177";
+        var ouid = "700015643860477680";
+        var ologin = "abril";
+        var ocode = "abril";
+        var otype = 'community';
+        var archtrendsEndpoint = 'https://archtrends.com/';
+
+        Util.service(archtrendsEndpoint + 'rpc/json/Archtrends_Service_Site', true, {
+            exceptionHandler: function (error) {
+                alert('erro!');
+            },
+            reflectSuccess: function (service) {
+                console.log(service);
+
+                var navigation = {};
+                navigation[OPTION_LIMIT] = 2;
+                service.getActiveHighlightsByArea('mostRead', navigation, false, null, null, {
+                    success: function (mostReadList) {
+                        // mais lidas
+                        console.log('mais lidas');
+                        console.log(mostReadList);
+
+                        $
+                    }
+                });
+                navigation[OPTION_LIMIT] = 1;
+                service.getActiveHighlightsByArea('mostReadMain', navigation, false, null, null, {
+                    success: function (mostReadMainList) {
+                        // mais lidas - principal
+                        console.log('mais lidas - principal');
+                        console.log(mostReadMainList);
+                    }
+                });
+                service.getActiveHighlightsByArea('mostReadAuthor', navigation, false, null, null, {
+                    success: function (mostReadAuthorList) {
+                        // autor destaque 
+                        console.log('autor destaque');
+                        console.log(mostReadAuthorList);
+
+                    }
+                });
+
+
+                // coleÃ§Ãµes
+                service.getProjectsWithTag(decodeURIComponent(escape('ColeÃ§Ãµes')), 'portobellosa', 0, 10, {
+                    success: function (galeryList) {
+                        // autor destaque 
+                        console.log('galeria');
+                        console.log(galeryList);
+
+                    }
+                });
+
+            },
+            reflectError: function () {
+                // alert('Erro de conexÃ£o, verifique sua conexÃ£o com a internet.');
+
+            }
+        });
+
+
+    </script>
 </head>
 
 <body>
@@ -119,7 +196,7 @@
                         </a>
                     </li>
                     <li class="banners__item">
-                        <a href="http://especificadorvirtualshop.portobello.com.br/">
+                        <a href="https://especificadorvirtualshop.portobello.com.br/">
                             <img src="./img/Especificador Virtual.png" alt="" srcset="">
                         </a>
                     </li>
@@ -170,6 +247,9 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div id="content">
+            <h1></h1>
         </div>
         <div class="container" data-aos="fade-up" data-aos-anchor-placement="center-center">
             <div class="recomenda">
@@ -317,6 +397,7 @@
 
             </ul>
         </div>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
         integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
@@ -324,6 +405,8 @@
     <script>
         AOS.init();
     </script>
+
+    <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>
