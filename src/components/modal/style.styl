@@ -91,6 +91,9 @@ body
             width: 18px;
             height: 18px;
     
+main
+    overflow-x: hidden
+
 .breadcrumb
     min-height: 60px
     display: flex
@@ -124,6 +127,8 @@ body
             img
                 opacity: 0.6
 
+.gray_wrapper
+    background: #f9f9f9
 .info
     padding: 50px 0
     display flex
@@ -176,11 +181,14 @@ body
         border-radius: 2px;
         background-color: #ffffff;
         border: 1px solid #d9d9d9;
+        border-bottom-color: #a0a2a8;
+        box-shadow: inset 0 -4px 0 0 #f1f1f1
         
         &:hover
             background: #002043
             text-decoration: none
             color: #fff
+            box-shadow: inset 0 -4px 0 0 #011327
 
 .biblioteca
     position relative
@@ -280,7 +288,7 @@ body
 .galeria
     padding: 50px 0
     display: flex
-    align-items: center
+    align-items: stretch
 
     strong 
         display: block
@@ -300,6 +308,9 @@ body
 
     &__content
         max-width 270px
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
      &__ul
         display: flex
@@ -307,13 +318,62 @@ body
         overflow: auto;
         flex-wrap: nowrap;
         width: 100%;
+        padding: 5px
+        position: relative
+        @media(min-width 991px)
+            margin-right: -250px;
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 5px
+            right 0
+            bottom: 5px
+            width: 200px
+            background-image: linear-gradient(to right, rgba(255,255,255,0.0), #f9f9f9)
     
     &__item
         margin-right: 30px
-    
+        min-height: 290px
+        min-width: 290px
+        position: relative
         a
             &:hover
                 opacity 0.6
+                text-decoration: none
+                img
+                    opacity 1
+
+        img
+            max-width: 290px
+            margin-bottom: 0
+            display: block
+            border-radius: 3px 3px 0 0
+            opacity .8
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+        .item__title
+            padding: 10px
+            background: #fff
+            font-size: 16px
+            font-weight: 600
+            color: #1d2029
+            box-shadow: 0 0 3px 0 rgba(0,0,0,.1)
+            border-radius: 0 0 2px 2px
+            position: absolute
+            bottom: 0
+            left: 0
+            right 0
+            display: flex
+            align-items: center
+            img
+                width: auto
+                height auto
+                position: static
+                margin: 0 10px 0 0
     
 
 .recomenda
@@ -483,10 +543,13 @@ body
         width 100%
         background-color: #fff;
         color: #1d2029;
+        border-bottom-color: #a0a2a8;
+        box-shadow: inset 0 -4px 0 0 #f1f1f1
         
         &:hover
             background: #104580
             color: #ffffff;
+            box-shadow: inset 0 -4px 0 0 #011327
 
     &__block
         flex: 1 1 auto
@@ -732,6 +795,7 @@ body
 
         &__item
             flex: 0 0 300px
+
 
     .social
         text-align: center
