@@ -47,7 +47,15 @@
                         console.log('mais lidas');
                         console.log(mostReadList);
 
-                        $
+                        mostReadList.results.forEach(element => {
+                            $('.recomenda__ul').append(`
+                            <li class="recomenda__item">
+                                <img src="${element.urlImage}" alt="${element.title}">
+                                <a href="${element.link}">${element.authorName}</a>
+                                <a href="${element.link}" class="recomenda__subtitle">${element.title}</a>
+                            </li>
+                        `);
+                        });
                     }
                 });
                 navigation[OPTION_LIMIT] = 1;
@@ -56,6 +64,13 @@
                         // mais lidas - principal
                         console.log('mais lidas - principal');
                         console.log(mostReadMainList);
+                        mostReadMainList.results.forEach(element => {
+                            $('.recomenda__content.recomenda__content--lef').append(`
+                                <img src="${element.urlImage}" alt="${element.title}">
+                                <a href="${element.link}" class="recomenda__link">Mobiliário</a>
+                                <a href="${element.link}" class="recomenda__span">${element.title}</a>
+                        `);
+                        });
                     }
                 });
                 service.getActiveHighlightsByArea('mostReadAuthor', navigation, false, null, null, {
@@ -64,6 +79,15 @@
                         console.log('autor destaque');
                         console.log(mostReadAuthorList);
 
+                        mostReadAuthorList.results.forEach(element => {
+                            $('.recomenda__block').append(`
+                            <img src="${element.authorImage}" alt="${element.authorName}">
+                            <div>
+                                <a href="${element.link}"><strong>${element.title}</strong></a>
+                                <span>${element.authorName}</span> 
+                            </div>
+                        `);
+                        });
                     }
                 });
 
@@ -71,9 +95,17 @@
                 // coleÃ§Ãµes
                 service.getProjectsWithTag(decodeURIComponent(escape('ColeÃ§Ãµes')), 'portobellosa', 0, 10, {
                     success: function (galeryList) {
-                        // autor destaque 
-                        console.log('galeria');
+                        // autor destaque  
                         console.log(galeryList);
+
+                        galeryList.forEach(element => {
+                            $('.galeria__ul').append(`
+                            <li class="galeria__item">
+                                <img src="${element.coverPicture}" alt="${element.name}">
+                                <span class="item__title">${element.name}</span>
+                            </li>
+                                `);
+                        });
 
                     }
                 });
@@ -233,42 +265,8 @@
                             Archtrends.</span>
                     </div>
                     <ul class="galeria__ul">
-                        <li class="galeria__item" data-aos="zoom-in-up">
-                            <a href="https://archtrends.com/blog/berliner/" target="_blank">
-                                <img src="https://archtrends.com/blog/wp-content/uploads/2020/03/image2-650x590.jpg"
-                                    alt="">
-                                <h3 class="item__title">
-                                    <img src="./img/seta.svg" alt=""> Coleção UNLTD | Berliner
-                                </h3>
-                            </a>
-                        </li>
-                        <li class="galeria__item" data-aos="zoom-in-up">
-                            <a href="https://archtrends.com/blog/pedra-calcaria/" target="_blank">
-                                <img src="https://archtrends.com/blog/wp-content/uploads/2020/03/o%CC%82nix-ambientes-iluminados-650x590.jpg"
-                                    alt="">
-                                <h3 class="item__title">
-                                    <img src="./img/seta.svg" alt=""> Coleção UNLTD | Onyx Unique
-                                </h3>
-                            </a>
-                        </li>
-                        <li class="galeria__item" data-aos="zoom-in-up">
-                            <a href="https://archtrends.com/blog/mesa-de-porcelanato/" target="_blank">
-                                <img src="https://archtrends.com/blog/wp-content/uploads/2020/03/Mesa-de-porcelanato-linha-harpa2.jpg"
-                                    alt="">
-                                <h3 class="item__title">
-                                    <img src="./img/seta.svg" alt=""> Coleção UNLTD | Harpa
-                                </h3>
-                            </a>
-                        </li>
-                        <li class="galeria__item" data-aos="zoom-in-up">
-                            <a href="https://archtrends.com/blog/portobello-grupo-revestir-2020/" target="_blank">
-                                <img src="https://archtrends.com/blog/wp-content/uploads/2020/03/1-Joa%CC%83o-Oliveira-Diretor-da-Portobello-confere-as-Lastras.jpeg"
-                                    alt="">
-                                <h3 class="item__title">
-                                    <img src="./img/seta.svg" alt=""> Revestir 2020
-                                </h3>
-                            </a>
-                        </li>
+
+
 
                     </ul>
                 </div>
@@ -281,42 +279,23 @@
             <div class="recomenda">
                 <div class="recomenda__content recomenda__content--lef">
                     <strong class="recomenda__title">Archtrends Recomenda</strong>
-                    <img src="./img/recomenda.png" alt="" srcset="">
+                    <!-- <img src="./img/recomenda.png" alt="" srcset="">
                     <a href="#" class="recomenda__link">Mobiliário</a>
                     <a href="#" class="recomenda__span">Ruy Ohtake cria móveis em porcelanato: “a inovação tem que
                         romper o
-                        consenso”</a>
+                        consenso”</a> -->
                 </div>
                 <div class="recomenda__content  recomenda__content--right">
                     <div class="recomenda__block">
-                        <img src="./img/perfil.png" alt="">
-                        <div>
-                            <strong>Intrends</strong>
-                            <span>Clarisse Schneicer</span>
-                            <a href="#" class="recomenda__subtitle">Millenials: a geração que estimula o
-                                compartilhamento de
-                                espaços com design e liberdade </a>
-                        </div>
+
                     </div>
                     <div class="recomenda__news">
                         <ul class="recomenda__ul">
-                            <li class="recomenda__item">
-                                <img src="./img/base.png" alt="" srcset="">
-                                <a href="#">Coletivo Criativo</a>
-                                <a href="#" class="recomenda__subtitle">Conheça Islândia: segundo destino do Coletivo
-                                    Criativo
-                                    Portobello </a>
-                            </li>
-                            <li class="recomenda__item">
-                                <img src="./img/base1.png" alt="" srcset="">
-                                <a href="#">Decoração</a>
-                                <a href="#" class="recomenda__subtitle">Como a startup Decora projetou seu escritório
-                                    com o
-                                    uso de porcelanatos </a>
-                            </li>
+
                         </ul>
                     </div>
-                    <a href="#" class="recomenda__btn">VER MAIS CONTEÚDOS</a>
+                    <a href="https://www.portobelloshop.com.br/maisarquitetura/" class="recomenda__btn">VER MAIS
+                        CONTEÚDOS</a>
                 </div>
             </div>
         </div>

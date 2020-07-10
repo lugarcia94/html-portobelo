@@ -416,10 +416,15 @@ main
                 &__ul
                     display: flex
                     align-items: stretch
+                    justify-content: space-between
+
+                &__item
+                    img
+                        max-height: 170px
 
                 @media(min-width 993px)
                     &__item
-                        flex: 0 0 50%
+                        flex: 0 0 48%
                         
                 &__btn
                     display: flex
@@ -795,6 +800,7 @@ main
 
         &__item
             flex: 0 0 300px
+    
 
 
     .social
